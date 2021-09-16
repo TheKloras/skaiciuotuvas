@@ -35,6 +35,8 @@ public class Main {
                     System.out.println(a + "/" + b + "=" + rez);
                     break;
             }
+            System.out.println("Norėdami skaičiuoti toliau įveskite taip, kitu atvėju bet kokį simbolį");
+            statusas = S.next();
         }
     }
 }
