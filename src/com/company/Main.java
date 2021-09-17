@@ -17,7 +17,7 @@ public class Main {
             a = S.nextDouble();
             System.out.println("Įveskite antrą skaičių");
             b = S.nextDouble();
-            switch(operacija){
+            switch (operacija) {
                 case '+':
                     rez = a + b;
                     System.out.println(a + "+" + b + "=" + rez);
@@ -31,14 +31,16 @@ public class Main {
                     System.out.println(a + "*" + b + "=" + rez);
                     break;
                 case '/':
-                    if (b==0){
+                    if (b == 0) {
                         System.out.println("Dalyba iš nulio negalima");
-                    }
-                    else{
+                    } else {
                         rez = a / b;
                         System.out.println(a + "/" + b + "=" + rez);
-                        break;
                     }
+                    break;
+                default:
+                    System.out.println("Nežinoma operacija");
+                    break;
             }
             System.out.println("Norėdami skaičiuoti toliau įveskite taip, kitu atvėju bet kokį simbolį");
             statusas = S.next();
