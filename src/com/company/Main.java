@@ -31,9 +31,14 @@ public class Main {
                     System.out.println(a + "*" + b + "=" + rez);
                     break;
                 case '/':
-                    rez = a % b;
-                    System.out.println(a + "/" + b + "=" + rez);
-                    break;
+                    if (b==0){
+                        System.out.println("Dalyba iš nulio negalima");
+                    }
+                    else{
+                        rez = a / b;
+                        System.out.println(a + "/" + b + "=" + rez);
+                        break;
+                    }
             }
             System.out.println("Norėdami skaičiuoti toliau įveskite taip, kitu atvėju bet kokį simbolį");
             statusas = S.next();
