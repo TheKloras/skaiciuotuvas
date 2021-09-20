@@ -10,8 +10,8 @@ public class Main {
         double rez;//rezultatas
         char operacija;
         Scanner S = new Scanner(System.in);
-        while (statusas.equals("taip")) {
-            System.out.println("Įveskite kokia operacija darysite, galimos operacijos:+,-,/,*");
+        do {
+            System.out.println("Įveskite kokia operacija darysite, galimos operacijos:+,-,/,*,#");
             operacija = S.next().charAt(0);
             System.out.println("Įveskite pirmą skaičių");
             a = S.nextDouble();
@@ -37,6 +37,18 @@ public class Main {
                         rez = a / b;
                         System.out.println(a + "/" + b + "=" + rez);
                     }
+                case '#':
+                    for (int i = 0; i < 13; i++) {
+                        rez = a * b + (b - a) / a * (13 + i);
+                        if (rez < 6) {
+                            System.out.println(a + " * " + b + " ( " + b + " - " + a + ") / " + a + " * " + (13 + i) + " = " + rez + " < 6");
+                        } else if (rez > 6) {
+                            System.out.println(a + " * " + b + " ( " + b + " - " + a + ") / " + a + " * " + (13 + i) + " = " + rez + " > 6");
+                        } else {
+                            System.out.println(a + " * " + b + " ( " + b + " - " + a + ") / " + a + " * " + (13 + i) + " = " + rez + " == 6");
+                        }
+                        System.out.println();
+                    }
                     break;
                 default:
                     System.out.println("Nežinoma operacija");
@@ -44,6 +56,6 @@ public class Main {
             }
             System.out.println("Norėdami skaičiuoti toliau įveskite taip, kitu atvėju bet kokį simbolį");
             statusas = S.next();
-        }
+        } while (statusas.equals("taip"));
     }
 }
