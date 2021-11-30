@@ -25,20 +25,14 @@ public class Main {
                         System.out.println(pirmasSkaicius + "+" + antrasSkaicius + "=" + sudeti(pirmasSkaicius,antrasSkaicius));
                         break;
                     case '-':
-                        rez = pirmasSkaicius - antrasSkaicius;
-                        System.out.println(pirmasSkaicius + "-" + antrasSkaicius + "=" + rez);
+                        System.out.println(pirmasSkaicius + "-" + antrasSkaicius + "=" + atimti(pirmasSkaicius,antrasSkaicius));
                         break;
                     case '*':
-                        rez = pirmasSkaicius * antrasSkaicius;
-                        System.out.println(pirmasSkaicius + "*" + antrasSkaicius + "=" + rez);
+                        System.out.println(pirmasSkaicius + "*" + antrasSkaicius + "=" + dauginti(pirmasSkaicius,antrasSkaicius));
                         break;
                     case '/':
-                        if (antrasSkaicius == 0) {
-                            System.out.println("Dalyba iš nulio negalima");
-                        } else {
-                            rez = pirmasSkaicius / antrasSkaicius;
-                            System.out.println(pirmasSkaicius + "/" + antrasSkaicius + "=" + rez);
-                        }
+                            System.out.println(pirmasSkaicius + "/" + antrasSkaicius + "=" + dalinti(pirmasSkaicius,antrasSkaicius));
+                            break;
                     case '#':
                         for (int i = 0; i < 13; i++) {
                             rez = pirmasSkaicius * antrasSkaicius + (antrasSkaicius - pirmasSkaicius) / pirmasSkaicius * (13 + i);
@@ -71,6 +65,26 @@ public class Main {
     static double sudeti(double pirmasSkaicius, double antrasSkaicius){
         double rez = pirmasSkaicius + antrasSkaicius;
         //System.out.println(pirmasSkaicius+ "+" + antrasSkaicius + "=" + rez);
+        return rez;
+    }
+
+    static double atimti(double pirmasSkaicius, double antrasSkaicius){
+        double rez = pirmasSkaicius - antrasSkaicius;
+        return rez;
+    }
+
+    static double dauginti(double pirmasSkaicius, double antrasSkaicius){
+        double rez = pirmasSkaicius * antrasSkaicius;
+        return rez;
+    }
+
+    static double dalinti(double pirmasSkaicius, double antrasSkaicius){
+        double rez = 0;
+        if (antrasSkaicius == 0) {
+            System.out.println("Dalyba iš nulio negalima");
+        } else {
+            rez = pirmasSkaicius / antrasSkaicius;
+        }
         return rez;
     }
 }
